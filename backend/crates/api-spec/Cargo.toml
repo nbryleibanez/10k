@@ -1,0 +1,9 @@
+[package]
+name = "tenk-api-spec"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tenk-dto = { path = "../dto" }
+utoipa = { workspace = true }
+serde_json = { workspace = true }

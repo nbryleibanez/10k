@@ -1,0 +1,12 @@
+[package]
+name = "tenk-usecases"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-trait = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
+tenk-domain = { path = "../domain" }
+chrono = { workspace = true }
+tokio = { workspace = true }

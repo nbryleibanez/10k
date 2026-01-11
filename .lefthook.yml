@@ -1,0 +1,9 @@
+pre-commit:
+  parallel: true
+  commands:
+    rust-fmt:
+      run: cd backend && cargo fmt
+    frontend-lint:
+      run: cd frontend && pnpm lint
+    frontend-test:
+      run: cd frontend && pnpm test --runInBand

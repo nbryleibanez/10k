@@ -1,0 +1,24 @@
+[package]
+name = "tenk-log-session"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = { workspace = true }
+aws-config = { workspace = true }
+aws-sdk-dynamodb = { workspace = true }
+aws-sdk-eventbridge = { workspace = true }
+async-trait = { workspace = true }
+chrono = { workspace = true }
+lambda_http = { workspace = true }
+lambda_runtime = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+tenk-domain = { path = "../../domain" }
+tenk-usecases = { path = "../../usecases" }
+tenk-infra = { path = "../../infra" }
+tenk-adapters = { path = "../../adapters" }
+tenk-dto = { path = "../../dto" }
