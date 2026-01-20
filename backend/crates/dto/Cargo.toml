@@ -6,6 +6,5 @@ edition = "2021"
 [dependencies]
 chrono = { workspace = true }
 serde = { workspace = true }
-serde_json = { workspace = true }
 tenk-domain = { path = "../domain" }
 utoipa = { workspace = true }

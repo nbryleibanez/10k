@@ -249,13 +249,8 @@ impl<'a, L: LeaderboardRepository> LeaderboardService<'a, L> {
             .collect();
         entries.sort_by(|a, b| b.total_minutes.cmp(&a.total_minutes));
         self.repo.save_entries(&entries).await?;
-        let filtered = if let Some(circle_id) = circle_id {
-            let _ = circle_id;
-            entries.clone()
-        } else {
-            entries.clone()
-        };
-        Ok(filtered)
+        // TODO: filter entries by circle members when circle_id is Some
+        Ok(entries)
     }
 
     pub async fn fetch(&self, circle_id: Option<&CircleId>) -> Result<Vec<LeaderboardEntry>, UseCaseError> {
@@ -356,7 +351,6 @@ mod tests {
 
     #[test]
     fn streak_check_counts_days() {
-        let repo = ();
         struct Dummy;
         #[async_trait]
         impl StreakRepository for Dummy {
